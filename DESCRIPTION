@@ -1,0 +1,9 @@
+Package: forecastTools
+Title: Evaluation of time-series forecasts
+Version: 0.0.1
+Authors@R: c(
+    person(c("Nicholas", "G."), "Reich", , "nick@umass.edu", role = c("aut", "cre"))
+    )
+Description: An R package with tools for managing, evaluating forecasts of time-series
+Depends:
+License: GPLv3
