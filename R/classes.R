@@ -33,10 +33,9 @@ setMethod("plot",
               tgt <- target
               dat <- filter(obj@forecast_data, target==tgt)
               p <- ggplot(dat) + 
-                  geom_rect(aes(xmin=bin_lwr, xmax=bin_upr_strict, ymin=0, ymax=value)) +
-                  geom_vline(aes(xintercept = as.numeric(dat[dat$pred_type=="point", "value"])), color="red") +
-                  scale_y_continuous("probability", limits=c(0,1)) +
-                  scale_x_continuous(name=target)
+                  geom_bar(aes(x=date_coord, y=value), stat="identity") +
+                  geom_vline(xintercept = as.numeric(obj@forecast_date), color="gray", linetype=2) +
+                  scale_y_continuous("probability", limits=c(0,1)) 
               print(p)
           }
 )
